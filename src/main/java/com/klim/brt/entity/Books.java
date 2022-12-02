@@ -3,8 +3,6 @@ package com.klim.brt.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.awt.*;
-
 @Entity
 @Data //getter,setter, constructor, equals, hashcode
 public class Books {
@@ -19,7 +17,6 @@ public class Books {
 //    private Image image;
 //    private Data start;
 //    private Data finished;
-
     @ManyToOne
     private Authors authors;
 

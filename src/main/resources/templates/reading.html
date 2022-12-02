@@ -12,13 +12,20 @@
     <header th:insert="blocks/header :: header"></header>
 
     <main>
-        <h1>Book Reading Tracker</h1>
+        <h1>Reading</h1>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="/reading" class="nav-link px-2 link-secondary">Reading</a></li>
             <li><a href="/for-later" class="nav-link px-2 link-dark">For later</a></li>
             <li><a href="/done" class="nav-link px-2 link-dark">Done</a></li>
         </ul>
+
+        <div th:each="el : ${books}" class="alert alert-info mt-2">
+            <h3 th:text="${el.title}"/>
+            <h4 th:text="${el.subtitle}"/>
+            <p th:text="${el.page}"/>
+            <p th:text="${el.notes}"/>
+        </div>
 
     </main>
 
