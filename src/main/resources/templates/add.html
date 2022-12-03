@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book Reading Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="col-lg-8 mx-auto p-4 py-md-5">
+
+    <header th:insert="blocks/header :: header"></header>
+
+    <main>
+        <h1>Add book</h1>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/add" class="nav-link px-2 link-secondary">Book</a></li>
+            <li><a href="/add-author" class="nav-link px-2 link-dark">Author</a></li>
+            <li><a href="/add-status" class="nav-link px-2 link-dark">Status</a></li>
+        </ul>
+
+        <div class="container mt-5 mb-5">
+            <form action="/add" method="post">
+                <input type="text" name="title" placeholder="write name book" class="form-control"><br>
+                <input type="text" name="subtitle" placeholder="write subtitle" class="form-control"><br>
+                <input type="text" name="authors" placeholder="write author" class="form-control"><br>
+                <input type="text" name="status" placeholder="status" class="form-control"><br>
+                <input type="number" name="page" placeholder="write page" class="form-control"><br>
+                <textarea name="notes" placeholder="write notes" class="form-control"></textarea><br>
+                <button type="submit" class="btn btn-success">Add book</button>
+            </form>
+
+        </div>
+    </main>
+
+    <div th:insert="blocks/footer :: footer"></div>
+
+</div>
+
+
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</body>
+</html>

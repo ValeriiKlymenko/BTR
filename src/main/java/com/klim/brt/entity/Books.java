@@ -2,6 +2,7 @@ package com.klim.brt.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.mapping.ToOne;
 
 @Entity
 @Data //getter,setter, constructor, equals, hashcode
@@ -20,7 +21,17 @@ public class Books {
     @ManyToOne
     private Authors authors;
 
-    @OneToOne
+    @ManyToOne
     private Status status;
 
+    public Books(String title, String subtitle, int page, String notes, Authors authors, Status status) {
+        this.title = title;
+        this.subtitle = subtitle;
+        this.page = page;
+        this.notes = notes;
+        this.authors = authors;
+        this.status = status;
+    }
+    public Books() {
+    }
 }

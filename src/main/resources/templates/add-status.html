@@ -12,15 +12,21 @@
     <header th:insert="blocks/header :: header"></header>
 
     <main>
-        <h1>Book Reading Tracker</h1>
+        <h1>Add Status</h1>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/reading" class="nav-link px-2 link-secondary">Reading</a></li>
-            <li><a href="/for-later" class="nav-link px-2 link-dark">For later</a></li>
-            <li><a href="/done" class="nav-link px-2 link-dark">Done</a></li>
+            <li><a href="/add" class="nav-link px-2 link-secondary">Book</a></li>
+            <li><a href="/add-author" class="nav-link px-2 link-dark">Author</a></li>
+            <li><a href="/add-status" class="nav-link px-2 link-dark">Status</a></li>
         </ul>
 
+        <div class="container mt-5 mb-5">
+            <form action="/add-status" method="post">
+                <input type="text" name="name_status" placeholder="write status" class="form-control"><br>
+                <button type="submit" class="btn btn-success">Add status</button>
+            </form>
 
+        </div>
     </main>
 
     <div th:insert="blocks/footer :: footer"></div>
@@ -29,9 +35,6 @@
 
 
 <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
-
-
 
 </body>
 </html>

@@ -14,4 +14,11 @@ public class Status {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name_status;
+
+    public Status(String name_status) {
+        this.name_status = name_status;
+    }
+
+    public Status() {
+    }
 }

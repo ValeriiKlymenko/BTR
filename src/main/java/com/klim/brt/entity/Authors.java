@@ -11,4 +11,11 @@ public class Authors {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name_author;
+
+    public Authors(String name_author) {
+        this.name_author = name_author;
+    }
+
+    public Authors() {
+    }
 }

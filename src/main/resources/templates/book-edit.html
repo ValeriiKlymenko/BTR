@@ -19,15 +19,21 @@
             <li><a href="/for-later" class="nav-link px-2 link-dark">For later</a></li>
             <li><a href="/done" class="nav-link px-2 link-dark">Done</a></li>
         </ul>
-        <div class="container mt-5">
-            <h2>All Books</h2>
-            <div th:each="el : ${books}" class="alert alert-info mt-2">
-                <h3 th:text="${el.title}"/>
-                <p th:text="${el.authors.name_author}"/>
-                <a th:href="'/book/' + ${el.id}" class="btn btn-warning">Detail</a>
+
+        <div class="container mt-5 mb-5">
+            <h1>Edit book</h1>
+            <div th:each="el : ${books}">
+                <form method="post">
+                    <input type="text" th:value="${el.title}" name="title" placeholder="write name book" class="form-control"><br>
+                    <input type="text" th:value="${el.subtitle}" name="subtitle" placeholder="write subtitle" class="form-control"><br>
+                    <input type="text" th:value="${el.authors.name_author}" name="authors" placeholder="write author" class="form-control"><br>
+                    <input type="text" th:value="${el.status.name_status}" name="status" placeholder="write status" class="form-control"><br>
+                    <input type="text" th:value="${el.page}" name="page" placeholder="write anons" class="form-control"><br>
+                    <textarea name="notes" placeholder="write text" class="form-control" th:text="${el.notes}" /><br>
+                    <button type="submit" class="btn btn-success">Edit</button>
+                </form>
             </div>
         </div>
-
 
     </main>
 
