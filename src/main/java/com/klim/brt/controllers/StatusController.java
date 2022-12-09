@@ -28,6 +28,6 @@ public class StatusController {
 
         Status status = new Status(name_status);
         statusRepository.save(status);
-        return "redirect:/add";
+        return "redirect:/add-book";
     }
 }

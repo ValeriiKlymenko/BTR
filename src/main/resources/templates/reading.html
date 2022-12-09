@@ -21,7 +21,7 @@
         </ul>
         <div class="container mt-5">
             <h2>All Books</h2>
-            <div th:each="el : ${books}" class="alert alert-info mt-2">
+                <div th:each="el : ${books}" class="alert alert-info mt-2">
                 <h3 th:text="${el.title}"/>
                 <p th:text="${el.authors.name_author}"/>
                 <a th:href="'/book/' + ${el.id}" class="btn btn-warning">Detail</a>

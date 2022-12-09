@@ -5,6 +5,7 @@ import com.klim.brt.repository.AuthorRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -25,6 +26,12 @@ public class AuthorController {
     public String authorPostAdd(@RequestParam String name_author, Model model){
         Authors authors = new Authors(name_author);
         authorRepository.save(authors);
-        return "redirect:/add";
+        return "redirect:/add-book";
+    }
+    @PostMapping("/author/{id}/remove")
+    public String authorPostDelete(@PathVariable(value = "id") long id, Model model){
+        Authors authors = authorRepository.findById(id).orElseThrow();
+        authorRepository.delete(authors);
+        return "redirect:/";
     }
 }

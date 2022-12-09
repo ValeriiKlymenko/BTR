@@ -1,11 +1,15 @@
 package com.klim.brt.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.mapping.ToOne;
 
 @Entity
 @Data //getter,setter, constructor, equals, hashcode
+@AllArgsConstructor
+@NoArgsConstructor
 public class Books {
 
     @Id
@@ -31,7 +35,5 @@ public class Books {
         this.notes = notes;
         this.authors = authors;
         this.status = status;
-    }
-    public Books() {
     }
 }

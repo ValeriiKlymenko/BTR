@@ -32,8 +32,13 @@
                 <a th:href="'/book/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
 
                 <form th:action="'/book/' + ${el.id} + '/remove'" method="post">
-                    <button class="btn btn-warning" type="submit">Remove</button>
+                    <button class="btn btn-warning" type="submit">Remove Book</button>
                 </form>
+
+               <br> <form th:action="'/author/' + ${el.authors.id} + '/remove'" method="post">
+                    <button class="btn btn-warning" type="submit">Remove Author</button>
+                </form>
+
             </div>
         </div>
 

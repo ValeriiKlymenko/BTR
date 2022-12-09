@@ -3,41 +3,35 @@ package com.klim.brt.controllers;
 import com.klim.brt.entity.Authors;
 import com.klim.brt.entity.Books;
 import com.klim.brt.entity.Status;
-import com.klim.brt.repository.AuthorRepository;
 import com.klim.brt.repository.BookRepository;
-import com.klim.brt.repository.StatusRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
 import java.util.Optional;
 
 @Controller
 public class BookController {
-
     private BookRepository bookRepository;
 //    //Замість @Autowired
     public BookController(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
-
     @GetMapping("/reading")
     public String home(Model model){
         Iterable<Books> books = bookRepository.findAll();
         model.addAttribute("books", books);
         return "reading";
     }
-    @GetMapping("/add")
+    @GetMapping("/add-book")
     public String bookAdd(Model model){
-        return "add";
+        return "add-book";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/add-book")
     public String bookPostAdd(@RequestParam String title,
                               @RequestParam String subtitle,
                               @RequestParam int page,
